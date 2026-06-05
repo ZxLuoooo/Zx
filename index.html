@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio — Software Engineer & AI Developer | Flutter, Python, Arduino, Robotics, ESP32, 3D Printing" />
+  <meta name="keywords" content="portfolio, software engineer, AI developer, Flutter, Python, Arduino, robotics, ESP32, Blender, 3D printing" />
+  <meta name="author" content="Your Name" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Portfolio | Software Engineer & AI Developer" />
+  <meta property="og:description" content="Building the future with code, AI, and creative technology." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourname.github.io" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://yourname.github.io" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Portfolio | Software Engineer & AI Developer</title>
+</head>
+<body>
+
+<!-- ======================== LOADER ======================== -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="lb">&lt;</span><span class="ln">YN</span><span class="lb">/&gt;</span>
+    </div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+    <div class="loader-pct" id="loader-pct">0%</div>
+    <div class="loader-status" id="loader-status">Initializing...</div>
+  </div>
+</div>
+
+<!-- ======================== CURSOR ======================== -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ======================== SCROLL PROGRESS ======================== -->
+<div class="scroll-prog" id="scroll-prog"></div>
+
+<!-- ======================== NAVBAR ======================== -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span class="lb">&lt;</span><span>YN</span><span class="lb">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#about"        data-lang-key="nav.about">About</a></li>
+      <li><a href="#skills"       data-lang-key="nav.skills">Skills</a></li>
+      <li><a href="#projects"     data-lang-key="nav.projects">Projects</a></li>
+      <li><a href="#certificates" data-lang-key="nav.certs">Certificates</a></li>
+      <li><a href="#experience"   data-lang-key="nav.exp">Experience</a></li>
+      <li><a href="#contact"      data-lang-key="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-sw" id="lang-sw" role="group" aria-label="Language switcher">
+        <button class="l-btn active" data-lang="en"  aria-label="English">EN</button>
+        <button class="l-btn"        data-lang="id"  aria-label="Indonesian">ID</button>
+        <button class="l-btn"        data-lang="ja"  aria-label="Japanese">日本語</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section id="hero" class="hero" aria-label="Hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-bg-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-tag reveal-up">
+      <span class="tag-pulse"></span>
+      <span data-lang-key="hero.tag">Available for Work</span>
+    </div>
+    <h1 class="hero-title reveal-up" style="--delay:.1s">
+      <span class="hero-hi" data-lang-key="hero.hi">Hello, I'm</span>
+      <span class="hero-name" id="hero-name">Your Name</span>
+    </h1>
+    <div class="hero-roles reveal-up" style="--delay:.2s" aria-live="polite">
+      <span data-lang-key="hero.ia">I'm a</span>
+      <div class="roles-ticker">
+        <span class="role" data-lang-key="hero.r1">Software Engineer</span>
+        <span class="role" data-lang-key="hero.r2">AI Developer</span>
+        <span class="role" data-lang-key="hero.r3">Robotics Enthusiast</span>
+        <span class="role" data-lang-key="hero.r4">3D Artist</span>
+      </div>
+    </div>
+    <p class="hero-desc reveal-up" style="--delay:.3s" data-lang-key="hero.desc">
+      Building the future with code, AI, and creative technology. Turning complex problems into elegant solutions.
+    </p>
+    <div class="hero-cta reveal-up" style="--delay:.4s">
+      <a href="#projects" class="btn btn-primary magnetic" data-lang-key="hero.cta1">View My Work</a>
+      <a href="#contact"  class="btn btn-ghost  magnetic" data-lang-key="hero.cta2">Get In Touch</a>
+    </div>
+    <div class="hero-stats reveal-up" style="--delay:.5s">
+      <div class="hstat">
+        <span class="hstat-n" id="stat-repos">--</span>
+        <span class="hstat-l" data-lang-key="hero.s1">Repositories</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-n" id="stat-followers">--</span>
+        <span class="hstat-l" data-lang-key="hero.s2">Followers</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-n">3+</span>
+        <span class="hstat-l" data-lang-key="hero.s3">Years Exp</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-ind" aria-hidden="true">
+    <div class="scroll-line-anim"></div>
+    <span data-lang-key="hero.scroll">Scroll</span>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section id="about" class="section about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="about.tag">Who I Am</span>
+      <h2 class="sec-title" id="about-title" data-lang-key="about.title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-col">
+        <div class="about-img-frame">
+          <div class="about-img-ph" aria-label="Profile photo">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span>YOUR PHOTO</span>
+          </div>
+          <div class="about-img-ring"></div>
+          <div class="about-img-dot about-img-dot--1"></div>
+          <div class="about-img-dot about-img-dot--2"></div>
+        </div>
+        <div class="about-badges" aria-hidden="true">
+          <div class="badge glass"><i class="fas fa-code"></i><span>Dev</span></div>
+          <div class="badge glass"><i class="fas fa-robot"></i><span>AI</span></div>
+          <div class="badge glass"><i class="fas fa-microchip"></i><span>IoT</span></div>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <p class="about-p" data-lang-key="about.p1">I'm a passionate software engineer and AI developer who loves building innovative solutions at the intersection of technology and creativity.</p>
+        <p class="about-p" data-lang-key="about.p2">With expertise in Flutter, Python, Arduino, and robotics, I create everything from mobile applications to autonomous robots and 3D-printed mechanical systems.</p>
+        <p class="about-p" data-lang-key="about.p3">I believe technology should be beautiful and functional. My work spans mobile development, embedded systems, AI/ML, and 3D design.</p>
+        <div class="about-info">
+          <div class="ainfo"><span data-lang-key="about.loc">Location</span><strong>Jakarta, Indonesia</strong></div>
+          <div class="ainfo"><span data-lang-key="about.focus">Current Focus</span><strong data-lang-key="about.focusv">AI & Robotics</strong></div>
+          <div class="ainfo"><span data-lang-key="about.edu">Education</span><strong data-lang-key="about.eduv">Computer Science</strong></div>
+          <div class="ainfo"><span>Status</span><strong class="status-green" data-lang-key="about.status">Open to Work</strong></div>
+        </div>
+        <a href="#contact" class="btn btn-primary magnetic" data-lang-key="about.cta">Let's Connect</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SKILLS ======================== -->
+<section id="skills" class="section skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="skills.tag">What I Know</span>
+      <h2 class="sec-title" id="skills-title" data-lang-key="skills.title">Skills & Technologies</h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-cat glass-card" role="article">
+        <div class="sk-cat-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3 data-lang-key="skills.mobile">Mobile & App Dev</h3>
+        <div class="sk-list">
+          <div class="sk-item">
+            <div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" width="22" height="22" /></div>
+            <div class="sk-info"><span>Flutter</span><div class="sk-bar"><div class="sk-fill" style="--p:90%"></div></div></div>
+            <span class="sk-pct">90%</span>
+          </div>
+          <div class="sk-item">
+            <div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" width="22" height="22" /></div>
+            <div class="sk-info"><span>Dart</span><div class="sk-bar"><div class="sk-fill" style="--p:85%"></div></div></div>
+            <span class="sk-pct">85%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat glass-card" role="article">
+        <div class="sk-cat-icon sk-purple"><i class="fas fa-microchip"></i></div>
+        <h3 data-lang-key="skills.embedded">Embedded & IoT</h3>
+        <div class="sk-list">
+          <div class="sk-item">
+            <div class="sk-icon sk-icon-fa"><i class="fas fa-microchip"></i></div>
+            <div class="sk-info"><span>Arduino</span><div class="sk-bar"><div class="sk-fill" style="--p:88%"></div></div></div>
+            <span class="sk-pct">88%</span>
+          </div>
+          <div class="sk-item">
+            <div class="sk-icon sk-icon-fa"><i class="fas fa-wifi"></i></div>
+            <div class="sk-info"><span>ESP32</span><div class="sk-bar"><div class="sk-fill" style="--p:82%"></div></div></div>
+            <span class="sk-pct">82%</span>
+          </div>
+          <div class="sk-item">
+            <div class="sk-icon sk-icon-fa"><i class="fas fa-robot"></i></div>
+            <div class="sk-info"><span>Robotics</span><div class="sk-bar"><div class="sk-fill" style="--p:85%"></div></div></div>
+            <span class="sk-pct">85%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat glass-card" role="article">
+        <div class="sk-cat-icon"><i class="fas fa-brain"></i></div>
+        <h3 data-lang-key="skills.ai">AI & Programming</h3>
+        <div class="sk-list">
+          <div class="sk-item">
+            <div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="22" height="22" /></div>
+            <div class="sk-info"><span>Python</span><div class="sk-bar"><div class="sk-fill" style="--p:87%"></div></div></div>
+            <span class="sk-pct">87%</span>
+          </div>
+          <div class="sk-item">
+            <div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="22" height="22" /></div>
+            <div class="sk-info"><span>TensorFlow</span><div class="sk-bar"><div class="sk-fill" style="--p:72%"></div></div></div>
+            <span class="sk-pct">72%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat glass-card" role="article">
+        <div class="sk-cat-icon sk-purple"><i class="fas fa-cube"></i></div>
+        <h3 data-lang-key="skills.3d">3D & Design</h3>
+        <div class="sk-list">
+          <div class="sk-item">
+            <div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender" width="22" height="22" /></div>
+            <div class="sk-info"><span>Blender</span><div class="sk-bar"><div class="sk-fill" style="--p:80%"></div></div></div>
+            <span class="sk-pct">80%</span>
+          </div>
+          <div class="sk-item">
+            <div class="sk-icon sk-icon-fa"><i class="fas fa-print"></i></div>
+            <div class="sk-info"><span>3D Printing</span><div class="sk-bar"><div class="sk-fill" style="--p:85%"></div></div></div>
+            <span class="sk-pct">85%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROJECTS ======================== -->
+<section id="projects" class="section projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="projects.tag">What I've Built</span>
+      <h2 class="sec-title" id="projects-title" data-lang-key="projects.title">Featured Projects</h2>
+    </div>
+    <div class="gh-bar glass">
+      <div class="gh-bar-item">
+        <i class="fab fa-github" aria-hidden="true"></i>
+        <span id="gh-user">GitHub</span>
+      </div>
+      <div class="gh-bar-item">
+        <i class="fas fa-code-branch" aria-hidden="true"></i>
+        <span id="gh-repos">-- repos</span>
+      </div>
+      <div class="gh-bar-item">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <span id="gh-followers">-- followers</span>
+      </div>
+      <div class="gh-bar-item">
+        <i class="fas fa-star" aria-hidden="true"></i>
+        <span id="gh-stars">-- stars</span>
+      </div>
+      <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-lang-key="projects.all">View All</a>
+    </div>
+    <div class="projects-grid" id="projects-grid" role="list" aria-label="Featured projects">
+      <div class="proj-loading" aria-live="polite">
+        <div class="proj-spinner"></div>
+        <span data-lang-key="projects.loading">Loading projects...</span>
+      </div>
+    </div>
+    <div class="projects-more">
+      <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-lang-key="projects.github">More on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CERTIFICATES ======================== -->
+<section id="certificates" class="section certificates" aria-labelledby="certs-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="certs.tag">Achievements</span>
+      <h2 class="sec-title" id="certs-title" data-lang-key="certs.title">Certificates</h2>
+    </div>
+    <div class="certs-grid" id="certs-grid" role="list">
+
+      <article class="cert-card glass-card" data-cert="0" role="listitem" tabindex="0" aria-label="Google IT Support Certificate">
+        <div class="cert-accent" style="--ca:#4285F4"></div>
+        <div class="cert-icon" style="color:#4285F4"><i class="fas fa-certificate"></i></div>
+        <div class="cert-body">
+          <div class="cert-issuer">Google</div>
+          <h3 class="cert-name">Google IT Support Professional</h3>
+          <div class="cert-meta"><span>2024</span><span>Professional</span></div>
+        </div>
+        <div class="cert-hover-overlay">
+          <button class="btn btn-primary btn-sm" data-lang-key="certs.view">View Certificate</button>
+        </div>
+      </article>
+
+      <article class="cert-card glass-card" data-cert="1" role="listitem" tabindex="0" aria-label="Machine Learning Certificate">
+        <div class="cert-accent" style="--ca:#0056D2"></div>
+        <div class="cert-icon" style="color:#0056D2"><i class="fas fa-certificate"></i></div>
+        <div class="cert-body">
+          <div class="cert-issuer">Coursera / Stanford</div>
+          <h3 class="cert-name">Machine Learning Specialization</h3>
+          <div class="cert-meta"><span>2024</span><span>Specialization</span></div>
+        </div>
+        <div class="cert-hover-overlay">
+          <button class="btn btn-primary btn-sm" data-lang-key="certs.view">View Certificate</button>
+        </div>
+      </article>
+
+      <article class="cert-card glass-card" data-cert="2" role="listitem" tabindex="0" aria-label="Flutter Development Certificate">
+        <div class="cert-accent" style="--ca:#02569B"></div>
+        <div class="cert-icon" style="color:#02569B"><i class="fas fa-certificate"></i></div>
+        <div class="cert-body">
+          <div class="cert-issuer">App Brewery / Udemy</div>
+          <h3 class="cert-name">Flutter Development Bootcamp</h3>
+          <div class="cert-meta"><span>2023</span><span>Bootcamp</span></div>
+        </div>
+        <div class="cert-hover-overlay">
+          <button class="btn btn-primary btn-sm" data-lang-key="certs.view">View Certificate</button>
+        </div>
+      </article>
+
+      <article class="cert-card glass-card" data-cert="3" role="listitem" tabindex="0" aria-label="Arduino Certificate">
+        <div class="cert-accent" style="--ca:#00878A"></div>
+        <div class="cert-icon" style="color:#00878A"><i class="fas fa-certificate"></i></div>
+        <div class="cert-body">
+          <div class="cert-issuer">Arduino Education</div>
+          <h3 class="cert-name">Arduino Fundamentals</h3>
+          <div class="cert-meta"><span>2023</span><span>Technical</span></div>
+        </div>
+        <div class="cert-hover-overlay">
+          <button class="btn btn-primary btn-sm" data-lang-key="certs.view">View Certificate</button>
+        </div>
+      </article>
+
+      <article class="cert-card glass-card" data-cert="4" role="listitem" tabindex="0" aria-label="Python AI Certificate">
+        <div class="cert-accent" style="--ca:#3776AB"></div>
+        <div class="cert-icon" style="color:#3776AB"><i class="fas fa-certificate"></i></div>
+        <div class="cert-body">
+          <div class="cert-issuer">Udemy</div>
+          <h3 class="cert-name">Python for AI & Machine Learning</h3>
+          <div class="cert-meta"><span>2023</span><span>Course</span></div>
+        </div>
+        <div class="cert-hover-overlay">
+          <button class="btn btn-primary btn-sm" data-lang-key="certs.view">View Certificate</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Certificate Modal -->
+<div class="modal-bg" id="cert-modal" role="dialog" aria-modal="true" aria-label="Certificate details">
+  <div class="modal-box glass" id="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="modal-inner" id="modal-inner"></div>
+  </div>
+</div>
+
+<!-- ======================== LANGUAGES ======================== -->
+<section id="languages" class="section lang-sec" aria-labelledby="lang-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="lang.tag">Communication</span>
+      <h2 class="sec-title" id="lang-title" data-lang-key="lang.title">Languages</h2>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card glass-card" role="article">
+        <div class="lang-flag" aria-hidden="true">🇮🇩</div>
+        <div class="lang-info">
+          <h3>Bahasa Indonesia</h3>
+          <span class="lang-level" data-lang-key="lang.native">Native</span>
+        </div>
+        <div class="lang-dots" aria-label="5 out of 5">
+          <span class="ld a"></span><span class="ld a"></span><span class="ld a"></span><span class="ld a"></span><span class="ld a"></span>
+        </div>
+      </div>
+      <div class="lang-card glass-card" role="article">
+        <div class="lang-flag" aria-hidden="true">🇬🇧</div>
+        <div class="lang-info">
+          <h3>English</h3>
+          <span class="lang-level" data-lang-key="lang.pro">Professional</span>
+        </div>
+        <div class="lang-dots" aria-label="4 out of 5">
+          <span class="ld a"></span><span class="ld a"></span><span class="ld a"></span><span class="ld a"></span><span class="ld"></span>
+        </div>
+      </div>
+      <div class="lang-card glass-card" role="article">
+        <div class="lang-flag" aria-hidden="true">🇯🇵</div>
+        <div class="lang-info">
+          <h3>日本語</h3>
+          <span class="lang-level" data-lang-key="lang.inter">Intermediate</span>
+        </div>
+        <div class="lang-dots" aria-label="3 out of 5">
+          <span class="ld a"></span><span class="ld a"></span><span class="ld a"></span><span class="ld"></span><span class="ld"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== EXPERIENCE ======================== -->
+<section id="experience" class="section experience" aria-labelledby="exp-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="exp.tag">My Journey</span>
+      <h2 class="sec-title" id="exp-title" data-lang-key="exp.title">Experience</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-card glass-card">
+          <div class="tl-header">
+            <h3 data-lang-key="exp.j1.title">Software Engineer</h3>
+            <span class="tl-period">2024 – Present</span>
+          </div>
+          <div class="tl-company"><i class="fas fa-building"></i><span data-lang-key="exp.j1.company">Tech Company</span></div>
+          <p data-lang-key="exp.j1.desc">Developed and maintained cross-platform mobile applications using Flutter. Integrated IoT devices and built AI-powered features for production apps.</p>
+          <div class="tl-tags"><span>Flutter</span><span>Python</span><span>AI/ML</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-card glass-card">
+          <div class="tl-header">
+            <h3 data-lang-key="exp.j2.title">Robotics Engineer</h3>
+            <span class="tl-period">2023 – 2024</span>
+          </div>
+          <div class="tl-company"><i class="fas fa-robot"></i><span data-lang-key="exp.j2.company">Robotics Lab</span></div>
+          <p data-lang-key="exp.j2.desc">Designed and programmed autonomous robots using Arduino and ESP32. Created 3D-printed mechanical components and advanced control systems.</p>
+          <div class="tl-tags"><span>Arduino</span><span>ESP32</span><span>3D Printing</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-card glass-card">
+          <div class="tl-header">
+            <h3 data-lang-key="exp.j3.title">Freelance Developer</h3>
+            <span class="tl-period">2022 – 2023</span>
+          </div>
+          <div class="tl-company"><i class="fas fa-laptop-code"></i><span data-lang-key="exp.j3.company">Self-employed</span></div>
+          <p data-lang-key="exp.j3.desc">Built mobile applications and automation scripts for clients. Specialized in IoT solutions and embedded systems integration for small businesses.</p>
+          <div class="tl-tags"><span>Freelance</span><span>Mobile Dev</span><span>IoT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT ======================== -->
+<section id="contact" class="section contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag" data-lang-key="contact.tag">Get In Touch</span>
+      <h2 class="sec-title" id="contact-title" data-lang-key="contact.title">Contact Me</h2>
+      <p class="sec-sub" data-lang-key="contact.sub">Have a project in mind? Let's build something amazing together.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-links">
+        <a href="mailto:your@email.com" class="contact-link glass-card">
+          <div class="cl-icon"><i class="fas fa-envelope"></i></div>
+          <div class="cl-info"><span>Email</span><strong>your@email.com</strong></div>
+          <div class="cl-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="contact-link glass-card">
+          <div class="cl-icon"><i class="fab fa-github"></i></div>
+          <div class="cl-info"><span>GitHub</span><strong>@YOUR_GITHUB_USERNAME</strong></div>
+          <div class="cl-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" class="contact-link glass-card">
+          <div class="cl-icon"><i class="fab fa-linkedin"></i></div>
+          <div class="cl-info"><span>LinkedIn</span><strong>YOUR_LINKEDIN</strong></div>
+          <div class="cl-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener" class="contact-link glass-card">
+          <div class="cl-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"><i class="fab fa-instagram"></i></div>
+          <div class="cl-info"><span>Instagram</span><strong>@YOUR_INSTAGRAM</strong></div>
+          <div class="cl-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="contact-form-card glass-card">
+          <h3 data-lang-key="contact.form.title">Send a Message</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-grp">
+              <label for="f-name" data-lang-key="contact.form.name">Your Name</label>
+              <input type="text" id="f-name" class="f-input" placeholder="John Doe" required />
+            </div>
+            <div class="form-grp">
+              <label for="f-email" data-lang-key="contact.form.email">Email Address</label>
+              <input type="email" id="f-email" class="f-input" placeholder="john@example.com" required />
+            </div>
+            <div class="form-grp">
+              <label for="f-msg" data-lang-key="contact.form.msg">Message</label>
+              <textarea id="f-msg" class="f-input" rows="4" placeholder="Your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full magnetic" data-lang-key="contact.form.send">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo"><span class="lb">&lt;</span>YN<span class="lb">/&gt;</span></div>
+      <p data-lang-key="footer.craft">Crafted with passion & precision</p>
+      <div class="footer-socials">
+        <a href="https://github.com/YOUR_GITHUB_USERNAME"  target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN"    target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/YOUR_INSTAGRAM"     target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:your@email.com"                    aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Your Name &mdash; <span data-lang-key="footer.rights">All rights reserved.</span></span>
+      <span class="footer-stack">Built with HTML · CSS · JS · Three.js · GSAP</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/github.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
