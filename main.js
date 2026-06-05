@@ -4,7 +4,7 @@
 
 // ─── CONFIG ─────────────────────────────────────────────────
 const CFG = {
-  github: 'YOUR_GITHUB_USERNAME', // ← Change this!
+  github: 'Tubagus Azka', // ← Change this!
   maxProjects: 6,
   loaderDuration: 2200,
 };
